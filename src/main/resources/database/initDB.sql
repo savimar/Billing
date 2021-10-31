@@ -1,5 +1,5 @@
-DROP table IF EXISTS users;
-DROP table IF EXISTS bills;
+DROP table IF EXISTS users CASCADE;
+DROP table IF EXISTS bills CASCADE;
 
 
 
@@ -15,7 +15,7 @@ create table bills
                       id  serial primary key,
                       user_id  integer,
                       account  integer,
-
+                      bill_status varchar(50),
                       constraint fk_bills_user
                           foreign key (user_id)
                               REFERENCES users (id)

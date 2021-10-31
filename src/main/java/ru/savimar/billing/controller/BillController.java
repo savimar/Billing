@@ -50,7 +50,7 @@ public class BillController {
     public String editBillById(Model model, @PathVariable("id") Optional<Integer> id/*, @PathVariable("userId") Integer userId*/) {
         if (id.isPresent()) {
            // int billId = Integer.parseInt(id.get());
-            Bill entity = billService.getBillById(id.get());
+            Bill entity = billService.getBillById(1/*id.get(*/);
             model.addAttribute("bill", entity);
          //   model.addAttribute("userId", userId);
         } else {

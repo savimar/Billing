@@ -11,13 +11,24 @@ public class Bill {
    private int id;
    @Column(name = "account")
    private int account;
+
+
+
+   @Column(name = "bill_status")
+   private /*BillStatus*/String billStatus;
    @OneToOne
    @JoinColumn(name="user_id", nullable = false)
    private User user;
 
    public Bill() {
    }
+   public String getBillStatus() {
+      return billStatus;
+   }
 
+   public void setBillStatus(String billStatus) {
+      this.billStatus = billStatus;
+   }
    public Bill(User user) {
       this.user = user;
       this.account=0;

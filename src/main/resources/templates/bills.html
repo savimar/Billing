@@ -31,14 +31,17 @@
               <tr>
 
                 <th>Цена</th>
+                <th>Статус</th>
                 <th>Редактировать</th>
                 <th>Удалить</th>
               </tr>
               </thead>
               <tbody>
               <tr th:each="bill : ${billList}">
-
+                <!--/*@thymesVar id="account" type="java.lang.Integer"*/-->
                 <td th:text="${bill.account}"></td>
+                <!--/*@thymesVar id="billStatus" type="java.lang.String"*/-->
+                <td th:text="${bill.billStatus}"></td>
                 <td>
                   <a th:href="@{/editBillForUser/{id}(id=${bill.id})}"
                      class="btn btn-primary">
